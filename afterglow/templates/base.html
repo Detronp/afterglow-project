@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ site.name }} {{ site.year }}{% endblock %}</title>
+  <meta name="description" content="{{ site.tagline }}">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('style.css') }}">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="blob" aria-hidden="true"></div>
+  {% block body %}{% endblock %}
+  <script src="{{ asset('main.js') }}" defer></script>
+</body>
+</html>

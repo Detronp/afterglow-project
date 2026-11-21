@@ -1,0 +1,10 @@
+services:
+  site:
+    build: .
+    image: afterglow:latest
+    ports:
+      - "8080:8080"
+    read_only: true          # the container never needs to write
+    tmpfs:
+      - /tmp
+    restart: unless-stopped

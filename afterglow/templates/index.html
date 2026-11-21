@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block body %}
+<nav class="nav">
+  <a href="#top" class="logo">{{ site.name[:2] }}<span>✦</span></a>
+  <div class="links">
+    <a href="#lineup">Lineup</a>
+    <a href="#experience">Experience</a>
+    <a href="#tickets" class="pill">Get tickets</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <p class="kicker reveal">{{ site.dates }} · {{ site.location }}</p>
+  <h1 class="title" aria-label="{{ site.name }}">
+    {% for ch in site.name %}<span style="--i: {{ loop.index0 }}">{{ ch }}</span>{% endfor %}
+  </h1>
+  <p class="tagline reveal">{{ site.tagline }}</p>
+
+  <div class="countdown reveal" data-target="{{ site.starts_at }}">
+    <div><b data-u="d">00</b><small>days</small></div>
+    <div><b data-u="h">00</b><small>hrs</small></div>
+    <div><b data-u="m">00</b><small>min</small></div>
+    <div><b data-u="s">00</b><small>sec</small></div>
+  </div>
+
+  <a href="#tickets" class="cta reveal magnetic">Secure your spot →</a>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    {% for _ in range(4) %}
+      {% for item in site.ticker %}<span>{{ item }}</span><i>✦</i>{% endfor %}
+    {% endfor %}
+  </div>
+</div>
+
+<section id="lineup" class="section">
+  <h2 class="heading reveal">The <em>lineup</em></h2>
+  <div class="bento">
+    {% for a in site.lineup %}
+    <article class="card reveal tilt {% if a.headliner %}headliner{% endif %}">
+      <span class="day">{{ a.day }}</span>
+      <h3>{{ a.name }}</h3>
+      <p>{{ a.genre }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="experience" class="section">
+  <h2 class="heading reveal">More than <em>music</em></h2>
+  <div class="experiences">
+    {% for e in site.experiences %}
+    <article class="exp reveal">
+      <span class="icon">{{ e.icon }}</span>
+      <h3>{{ e.title }}</h3>
+      <p>{{ e.text }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="tickets" class="section">
+  <h2 class="heading reveal">Pick your <em>pass</em></h2>
+  <div class="tickets">
+    {% for t in site.tickets %}
+    <article class="ticket reveal {% if t.featured %}featured{% endif %}">
+      {% if t.featured %}<span class="badge">Most popular</span>{% endif %}
+      <h3>{{ t.tier }}</h3>
+      <p class="price"><sup>$</sup>{{ t.price }}</p>
+      <ul>{% for p in t.perks %}<li>{{ p }}</li>{% endfor %}</ul>
+      <a href="#tickets" class="buy magnetic">Choose {{ t.tier }}</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="big">SEE YOU<br>IN THE <em>DUST</em></p>
+  <p class="fine">{{ site.name }} {{ site.year }} is a demo site. Built with Python, served by Nginx, shipped in Docker.</p>
+</footer>
+{% endblock %}

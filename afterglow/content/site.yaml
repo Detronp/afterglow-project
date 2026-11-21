@@ -1,0 +1,76 @@
+# All the site's content lives here. Edit this file, rebuild, done.
+name: AFTERGLOW
+year: 2027
+tagline: Three nights. One desert. Zero sleep.
+dates: Jun 18–20, 2027
+starts_at: "2027-06-18T18:00:00-07:00"
+location: Mojave Basin, CA
+
+ticker:
+  - 3 stages
+  - 48 artists
+  - sunrise sets
+  - art installations
+  - silent disco
+  - no phones in the dome
+
+lineup:
+  - name: Nova Kaye
+    genre: Hyperpop
+    day: Fri
+    headliner: true
+  - name: Glass Animals Club
+    genre: Indie electronic
+    day: Sat
+    headliner: true
+  - name: DJ Mirage
+    genre: Afro house
+    day: Sun
+    headliner: true
+  - name: Velvet Static
+    genre: Shoegaze
+    day: Fri
+  - name: Koji Waves
+    genre: Future garage
+    day: Fri
+  - name: Luna Ortega
+    genre: Latin club
+    day: Sat
+  - name: Parallel Youth
+    genre: Alt pop
+    day: Sat
+  - name: Hex & Honey
+    genre: Neo soul
+    day: Sun
+  - name: Basement Saints
+    genre: UK drill
+    day: Sun
+  - name: Solar Echo
+    genre: Ambient techno
+    day: Sat
+
+experiences:
+  - icon: "◐"
+    title: Sunrise Dome
+    text: A 360° projection dome that opens to the sky at 5:42am.
+  - icon: "✺"
+    title: Neon Garden
+    text: Two acres of glowing sculptures by 20 local artists.
+  - icon: "≋"
+    title: Oasis Pools
+    text: Spring-fed pools, cold drinks, deep house all afternoon.
+  - icon: "◎"
+    title: Silent Disco
+    text: Three channels, one headset, zero noise complaints.
+
+tickets:
+  - tier: General
+    price: 289
+    perks: [3-day access, Camping, Free water refills]
+  - tier: VIP
+    price: 549
+    featured: true
+    perks: [Everything in General, Front-of-stage pit, Lounge + bar, Fast entry]
+  - tier: Glow Pass
+    price: 1199
+    perks: [Everything in VIP, Glamping tent, Artist meet & greet, Golf-cart shuttle]

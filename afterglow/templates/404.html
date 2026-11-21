@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Lost in the desert · {{ site.name }}{% endblock %}
+{% block body %}
+<header class="hero lost">
+  <h1 class="title">{% for ch in "404" %}<span style="--i: {{ loop.index0 }}">{{ ch }}</span>{% endfor %}</h1>
+  <p class="tagline">You wandered off the map. It happens to the best of us.</p>
+  <a href="/" class="cta magnetic">Back to the main stage →</a>
+</header>
+{% endblock %}
